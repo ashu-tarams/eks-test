@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage("Build") {
       steps {
-        sh 'mvn -v'
+        echo 'BUilding'
       }
     }
 
@@ -13,7 +13,7 @@ pipeline {
         stage("Unit Tests") {
           agent { docker 'openjdk:7-jdk-alpine' }
           steps {
-            sh 'java -version'
+            echo 'Testing...'
           }
         }
         stage("Functional Tests") {
